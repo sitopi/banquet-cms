@@ -16,7 +16,7 @@
           @foreach($drunkards as $drunkard)
           <tr>
               <td>{{ $drunkard->drunkard_id }}</td>
-              <td>{{ $drunkard->name }}</td>
+              <td><a href="/drunkard/{{ $drunkard->drunkard_id }}">{{ $drunkard->name }}</a></td>
               <td>{{ $drunkard->level }}</td>
               <td>{{ $drunkard->hp }}</td>
               <td>{{ $drunkard->attack }}</td>

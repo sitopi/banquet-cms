@@ -17,7 +17,10 @@ use App\Http\Controllers\DrunkardsWebController;
 */
 
 // 酔っぱらい一覧画面を表示
-Route::get('/', [DrunkardsWebController::class, 'showList']);
+Route::get('/', [DrunkardsWebController::class, 'showList'])->name('drunkards');
+
+// 酔っぱらい詳細画面を表示
+Route::get('/drunkard/{drunkard_id}', [DrunkardsWebController::class, 'showDetail'])->name('show');
 
 // Route::get('/get', 'DrunkardController@get');
 Route::get('/get',[DrunkardController::class, 'get']);
