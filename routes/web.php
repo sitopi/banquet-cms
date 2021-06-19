@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\DrunkardController;
+use App\Http\Controllers\DrunkardsWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use App\Http\Controllers\DrunkardController;
 */
 
 // 酔っぱらい一覧画面を表示
-Route::get('/', 'DrunkardsWebController@showList')->name('drunkards');
+Route::get('/', [DrunkardsWebController::class, 'showList']);
 
 // Route::get('/get', 'DrunkardController@get');
 Route::get('/get',[DrunkardController::class, 'get']);
