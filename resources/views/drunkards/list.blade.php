@@ -2,21 +2,21 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>ブログ</title>
+    <title>BanQuet管理画面</title>
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/app.js" defer></script>
 </head>
 <body>
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">ブログ</a>
+  <a class="navbar-brand" href="#">BanQuet管理画面</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">ブログ一覧 <span class="sr-only"></span></a>
-      <a class="nav-item nav-link" href="#">ブログ投稿</a>
+      <a class="nav-item nav-link active" href="#">酔っぱらい一覧 <span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="#">酔っぱらい追加</a>
     </div>
   </div>
 </nav>
@@ -25,7 +25,7 @@
     <div class="container">
     <div class="row">
   <div class="col-md-8 col-md-offset-2">
-      <h2>ブログ記事一覧</h2>
+      <h2>酔っぱらい一覧</h2>
       <table class="table table-striped">
           <tr>
               <th>酔っぱらい番号</th>
@@ -51,7 +51,7 @@
     </div>
     <footer class="footer bg-dark  fixed-bottom">
     <div class="container text-center">
-    <span class="text-light">©︎福のプログラミング講座</span>
+    <span class="text-light">©︎sitopiの階段</span>
 </div>
     </footer>
 </body>
