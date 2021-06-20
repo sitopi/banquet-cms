@@ -34,5 +34,8 @@ Route::get('/drunkard/edit/{id}', [DrunkardsWebController::class, 'showEdit'])->
 // 酔っぱらい更新
 Route::post('/drunkard/update', [DrunkardsWebController::class, 'exeUpdate'])->name('update');
 
+// 酔っぱらい削除
+Route::post('/drunkard/delete/{id}', [DrunkardsWebController::class, 'exeDelete'])->name('delete');
+
 // 酔っぱらい一覧取得
 Route::get('/get',[DrunkardController::class, 'get']);

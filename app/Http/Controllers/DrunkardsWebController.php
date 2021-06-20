@@ -87,4 +87,17 @@ class DrunkardsWebController extends Controller
         }
         return redirect(route('drunkards'));
     }
+
+    public function exeDelete($id){
+        if(empty($id)){
+            return redirect(route('drunkard'));
+        }
+        try{
+            Mst_drunkard::destroy($id);
+        } catch(\Throwable $e){
+            abort(500);
+        }
+
+        return redirect(route('drunkards'));
+    }
 }
