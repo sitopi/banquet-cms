@@ -15,6 +15,6 @@ class Mst_drunkard extends Model
         'level',
         'hp',
         'attack',
-        'moce_speed'
+        'move_speed'
     ];
 }
