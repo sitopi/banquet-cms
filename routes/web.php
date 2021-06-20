@@ -19,6 +19,12 @@ use App\Http\Controllers\DrunkardsWebController;
 // 酔っぱらい一覧画面を表示
 Route::get('/', [DrunkardsWebController::class, 'showList'])->name('drunkards');
 
+// 酔っぱらい登録画面を表示
+Route::get('/drunkard/create', [DrunkardsWebController::class, 'showCreate'])->name('create');
+
+// 酔っぱらい登録
+Route::post('/drunkard/store', [DrunkardsWebController::class, 'exeStore'])->name('store');
+
 // 酔っぱらい詳細画面を表示
 Route::get('/drunkard/{drunkard_id}', [DrunkardsWebController::class, 'showDetail'])->name('show');
 
