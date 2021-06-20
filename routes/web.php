@@ -26,7 +26,13 @@ Route::get('/drunkard/create', [DrunkardsWebController::class, 'showCreate'])->n
 Route::post('/drunkard/store', [DrunkardsWebController::class, 'exeStore'])->name('store');
 
 // 酔っぱらい詳細画面を表示
-Route::get('/drunkard/{drunkard_id}', [DrunkardsWebController::class, 'showDetail'])->name('show');
+Route::get('/drunkard/{id}', [DrunkardsWebController::class, 'showDetail'])->name('show');
 
-// Route::get('/get', 'DrunkardController@get');
+// 酔っぱらい編集画面を表示
+Route::get('/drunkard/edit/{id}', [DrunkardsWebController::class, 'showEdit'])->name('edit');
+
+// 酔っぱらい更新
+Route::post('/drunkard/update', [DrunkardsWebController::class, 'exeUpdate'])->name('update');
+
+// 酔っぱらい一覧取得
 Route::get('/get',[DrunkardController::class, 'get']);

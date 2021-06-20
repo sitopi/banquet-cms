@@ -15,7 +15,7 @@ class CreateTblDrunkardAppearanceHistorysTable extends Migration
     {
         if(Schema::hasTable('tbl_drunkard_appearance_historys') === false){
             Schema::create('tbl_drunkard_appearance_historys', function (Blueprint $table) {
-                $table->bigIncrements('drunkard_id');
+                $table->bigIncrements('id');
                 $table->timestamps();
             });
         }

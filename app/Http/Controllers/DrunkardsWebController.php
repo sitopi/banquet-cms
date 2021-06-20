@@ -27,16 +27,11 @@ class DrunkardsWebController extends Controller
     public function exeStore(DrunkardRequest $request){
         $inputs = $request->all();
         Mst_drunkard::create($inputs);
-
-        // \session::flash('err_msg','酔っぱらいを登録しました。');
-        // $request->session()->flash('err_msg','酔っ払いを登録しました。');
         return redirect(route('drunkards'));
-        
     }
 
-    public function showDetail($drunkard_id){
-        // dd($drunkard_id);
-        $drunkard = Mst_drunkard::where('drunkard_id',$drunkard_id)->first();
+    public function showDetail($id){
+        $drunkard = Mst_drunkard::where('id',$id)->first();
 
         if(is_null($drunkard)){
             // \session::flash('err_msg','データがありません。');
@@ -47,5 +42,49 @@ class DrunkardsWebController extends Controller
             'drunkards.detail',
             ['drunkard' => $drunkard]
         );
+    }
+
+    public function showEdit($id){
+        $drunkard = Mst_drunkard::where('id',$id)->first();
+
+        if(is_null($drunkard)){
+            // \session::flash('err_msg','データがありません。');
+            return redirect(route('drunkards'));
+        }
+
+        return view(
+            'drunkards.edit',
+            ['drunkard' => $drunkard]
+        );
+    }
+
+    public function exeUpdate(DrunkardRequest $request){
+        $inputs = $request->all();
+
+        \DB::beginTransaction();
+        try{
+            // $drunkard = Mst_drunkard::find($inputs['id']);
+            // dd($inputs);
+            $id = $inputs['id'];
+            $drunkard = Mst_drunkard::where('id',$id)->first();
+            // dd($inputs);
+            $drunkard->fill([
+                'name' => $inputs['name'],
+                'level' => (int)$inputs['level'],
+                'hp' => (int)$inputs['hp'],
+                'attack' => (int)$inputs['attack'],
+                'move_speed' => (int)$inputs['move_speed'],
+                'description' => $inputs['description']
+            ]);
+            // dd($drunkard);
+            $drunkard->save();
+            
+            // dd($inputs);
+            \DB::commit();
+        } catch(\Throwable $e){
+            \DB::rollback();
+            abort(500);
+        }
+        return redirect(route('drunkards'));
     }
 }

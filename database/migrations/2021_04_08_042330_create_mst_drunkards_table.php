@@ -15,12 +15,13 @@ class CreateMstDrunkardsTable extends Migration
     {
         if(Schema::hasTable('mst_drunkards') === false){
             Schema::create('mst_drunkards', function (Blueprint $table) {
-                $table->bigIncrements('drunkard_id');
+                $table->bigIncrements('id');
                 $table->string('name');
                 $table->integer('level');
                 $table->integer('hp');
                 $table->integer('attack');
                 $table->integer('move_speed');
+                $table->string('description');
                 $table->timestamps();
             });
         }

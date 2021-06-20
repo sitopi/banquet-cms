@@ -12,15 +12,17 @@
               <th>体力</th>
               <th>攻撃力</th>
               <th>移動速度</th>
+              <th></th>
           </tr>
           @foreach($drunkards as $drunkard)
           <tr>
-              <td>{{ $drunkard->drunkard_id }}</td>
-              <td><a href="/drunkard/{{ $drunkard->drunkard_id }}">{{ $drunkard->name }}</a></td>
+              <td>{{ $drunkard->id }}</td>
+              <td><a href="/drunkard/{{ $drunkard->id }}">{{ $drunkard->name }}</a></td>
               <td>{{ $drunkard->level }}</td>
               <td>{{ $drunkard->hp }}</td>
               <td>{{ $drunkard->attack }}</td>
               <td>{{ $drunkard->move_speed }}</td>
+              <td><button type="button" class="btn btn-primary" onclick="location.href='drunkard/edit/{{$drunkard->id}}'">編集</td>
           </tr>
           @endforeach
       </table>
