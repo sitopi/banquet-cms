@@ -15,7 +15,8 @@ class DrunkardController extends Controller
         $responseJson = [
             'mst_drunkards' => $drunkards
         ];
-
-        return response()->json($drunkards);
+        
+        // $responseJson = "{\"drunkards\":" + $responseJson + "}";
+        return response()->json($responseJson);
     }
 }
