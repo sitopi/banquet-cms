@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h2>ブログ投稿フォーム</h2>
+        <h2>酔っぱらい編集フォーム</h2>
         <form method="POST" action="{{ route('update') }}" onSubmit="return checkSubmit()">
         @csrf
         <input type="hidden" name="id" value="{{$drunkard->id}}">
