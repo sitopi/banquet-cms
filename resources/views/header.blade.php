@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{{ route('drunkards') }}">酔っぱらい一覧 <span class="sr-only"></span></a>
-      <a class="nav-item nav-link" href="{{ route('create') }}">酔っぱらい登録</a>
+      <a class="nav-item nav-link active" href="{{ route('create') }}">酔っぱらい登録</a>
     </div>
   </div>
 </nav>
