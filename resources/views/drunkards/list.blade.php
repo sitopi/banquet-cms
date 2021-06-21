@@ -36,7 +36,7 @@
 
 <script>
 function checkDelete(){
-if(window.confirm('送信してよろしいですか？')){
+if(window.confirm('削除してよろしいですか？')){
     return true;
 } else {
     return false;

@@ -125,7 +125,7 @@
 </div>
 <script>
 function checkSubmit(){
-if(window.confirm('送信してよろしいですか？')){
+if(window.confirm('この内容で登録してよろしいですか？')){
     return true;
 } else {
     return false;
